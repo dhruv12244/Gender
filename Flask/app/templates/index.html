@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <!------ Include the above in your HEAD tag ---------->
+    <title>Face Recognition Module</title>
+</head>
+
+<body>
+    <div class="coverphotodiv">
+        <img src="{{ url_for('static', filename='src/cover.png') }}" class="coverphoto" width="1000" alt="cover" />
+    </div>
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="{{url_for('index')}}">
+            <!-- Logo Image -->
+            <img src="{{ url_for('static', filename='src/logo.png') }}" width="100" height="100" alt="logo" />
+            <!-- Logo Text -->
+            <span class="title text-uppercase h1">Age and Gender Prediction</span>
+        </a>
+    </nav>
+
+    <div class="ml-5 w-75">
+
+        <div class="row" style="width: 100%; margin-bottom: 20px;">
+            <div class="col-6 border" style="padding: 0px">
+                <form action="/run_svm_model" method="get" style="padding: 20px">
+                    <div>
+                        This is a paragraph explaining SVM model workflow for Age and Gender Prediction.
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Run SVM Model</button>
+                </form>
+            </div>
+
+            <div class="col-6 border" style="padding: 0px">
+                <form action="/run_keras_model" method="get" style="padding: 20px">
+                    <div>
+                        This is a paragraph explaining CNN model workflow for Age and Gender Prediction.
+                    </div>
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Run CNN Model</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script> -->
+</body>
+
+</html>
